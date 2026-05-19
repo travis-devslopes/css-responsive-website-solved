@@ -1,17 +1,140 @@
-/* 
-  * Add the styles that belong to the DESKTOP view only
-  * Add the media rule and the styles that are common within the TABLET and MOBILE views
-  * Add the media rule and the styles that belong to the MOBILE view only
-*/
+/* Global responsive fixes */
 
-@media (min-width: 1024px) {
-  /* .top-navigation .trigram {
-    display: none;
-  } */
-
-  /* 👇👇👇 Add the styles that belong to the DESKTOP view only beneath 👇👇👇 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* 👇👇👇 Add the media rule and the styles that are common within the TABLET and MOBILE views beneath 👇👇👇 */
+img {
+  max-width: 100%;
+  height: auto;
+}
 
-/* 👇👇👇 Add the media rule and the styles that belong to the MOBILE view only beneath 👇👇👇 */
+/* =========================
+   DESKTOP
+========================= */
+
+@media (min-width: 1024px) {
+  .trigram {
+    display: none;
+  }
+
+  .top-navigation ul {
+    display: flex;
+    gap: 24px;
+  }
+
+  .portfolio-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .teammates-list-wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1023px) {
+  .content {
+    width: 90%;
+    margin: auto;
+  }
+
+  .top-navigation ul {
+    display: none;
+  }
+
+  .trigram {
+    display: block;
+    font-size: 28px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
+
+  .portfolio-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .teammates-list-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .section-info {
+    text-align: center;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 767px) {
+  .content {
+    width: 100%;
+    padding: 0 16px;
+  }
+
+  .portfolio-list {
+    grid-template-columns: 1fr;
+  }
+
+  .teammates-list-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  h1 {
+    font-size: 32px;
+    text-align: center;
+  }
+
+  .subtext {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .footer-contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    text-align: center;
+  }
+
+  .social-icons {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+}
+
+/* =========================
+   HOVER EFFECTS
+========================= */
+
+.top-navigation a:hover {
+  opacity: 0.7;
+  transition: 0.3s;
+}
+
+.teammate-social-icons div:hover {
+  opacity: 0.7;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.footer-content a:hover {
+  opacity: 0.7;
+  transition: 0.3s;
+}
